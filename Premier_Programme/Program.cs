@@ -2,13 +2,50 @@
 {
     class Program
     {
-        static string DemanderNom()
+
+        static void AfficherInfosPersonne(string nom, int age)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Bonjour, vous vous appelez " + nom + ", vous avez " + age + " ans.");
+            Console.WriteLine("Bientôt vous aurez " + (age + 1) + " ans.");
+
+            if (age == 18)
+            {
+                Console.WriteLine("Vous êtes tout juste majeur");
+
+
+            }
+            else if (age == 17)
+            {
+                Console.WriteLine("Vous serez bientôt majeurr.");
+            }
+            else if (age > 18)
+            {
+                Console.WriteLine("Vous êtes majeur.");
+
+                if (age >= 60)
+                {
+                    Console.WriteLine("Vous êtes un jeune senior.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Vous êtes mineur.");
+
+                if (age < 10)
+                {
+                    Console.WriteLine("Vous êtes un enfant");
+                }
+            }
+        }
+
+        static string DemanderNom(int numeroPersonne)
         {
             string nom = "";
 
             while (nom == "")
             {
-                Console.Write("Quel est votre nom ?");
+                Console.Write("Quel est le nom de la personne numéro " + numeroPersonne + " ?");
                 nom = Console.ReadLine();
                 nom = nom.Trim();
 
@@ -28,13 +65,13 @@
             return nom;
         }
 
-        static int DemanderAge()
+        static int DemanderAge(string nom)
         {
             int ageNum = 0;
 
             while (ageNum <= 0)
             {
-                Console.WriteLine("Quel est votre age ?");
+                Console.WriteLine(nom + ", quel est votre age ?");
                 string ageStr = Console.ReadLine();
 
                 try
@@ -57,15 +94,16 @@
         static void Main(string[] args)
         {
 
-            string nom = DemanderNom();
+            string nom1 = DemanderNom(1);
+            string nom2 = DemanderNom(2);
 
-            int ageNum = DemanderAge();
+            int ageNum1 = DemanderAge(nom1);
+            int ageNum2 = DemanderAge(nom2);
 
-            Console.WriteLine("Bonjour, vous vous appelez " + nom + ", vous avez " + ageNum + " ans.");
-
-            int ageProchain = ageNum + 1;
-            Console.WriteLine("Bientôt vous aurez " + ageProchain + " ans.");
+            AfficherInfosPersonne(nom1, ageNum1);
+            AfficherInfosPersonne(nom2, ageNum2);
 
         }
+
     }
 }
