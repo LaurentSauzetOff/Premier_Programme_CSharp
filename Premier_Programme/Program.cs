@@ -3,7 +3,7 @@
     class Program
     {
 
-        static void AfficherInfosPersonne(string nom, int age)
+        static void AfficherInfosPersonne(string nom, int age, float taille = 0)
         {
             Console.WriteLine();
             Console.WriteLine("Bonjour, vous vous appelez " + nom + ", vous avez " + age + " ans.");
@@ -33,14 +33,19 @@
             {
                 Console.WriteLine("Vous êtes majeur.");
             }
+            else if (age < 10)
+            {
+                Console.WriteLine("Vous êtes un enfant");
+            }
             else
             {
                 Console.WriteLine("Vous êtes mineur.");
+            }
 
-                if (age < 10)
-                {
-                    Console.WriteLine("Vous êtes un enfant");
-                }
+            // Vous faites 1.75m de hauteur
+            if (taille != 0)
+            {
+                Console.WriteLine("Vous faites " + taille + "m de hauteur");
             }
         }
 
@@ -105,19 +110,10 @@
             int ageNum1 = DemanderAge(nom1);
             int ageNum2 = DemanderAge(nom2);
 
-            AfficherInfosPersonne(nom1, ageNum1);
+            //float taille = 1.75f;
+
+            AfficherInfosPersonne(nom1, ageNum1, 1.75f);
             AfficherInfosPersonne(nom2, ageNum2);
-
-            int nbPersonnes = 3;
-
-            for (int i = 0; i < nbPersonnes; i++)
-            {
-                string nom = "Personne" + (i + 1);
-                int age = DemanderAge(nom);
-                AfficherInfosPersonne(nom, age);
-                Console.WriteLine();
-                Console.WriteLine("---");
-            }
 
         }
     }
