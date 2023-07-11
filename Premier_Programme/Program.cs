@@ -12,8 +12,6 @@
             if (age == 18)
             {
                 Console.WriteLine("Vous êtes tout juste majeur");
-
-
             }
             else if (age == 17)
             {
@@ -110,7 +108,17 @@
             AfficherInfosPersonne(nom1, ageNum1);
             AfficherInfosPersonne(nom2, ageNum2);
 
-        }
+            int nbPersonnes = 3;
 
+            for (int i = 0; i < nbPersonnes; i++)
+            {
+                string nom = "Personne" + (i + 1);
+                int age = DemanderAge(nom);
+                AfficherInfosPersonne(nom, age);
+                Console.WriteLine();
+                Console.WriteLine("---");
+            }
+
+        }
     }
 }
