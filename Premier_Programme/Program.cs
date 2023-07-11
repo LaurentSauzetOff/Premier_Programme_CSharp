@@ -23,6 +23,10 @@
             {
                 Console.WriteLine("Vous êtes adolescent");
             }
+            else if ((age == 1) || (age == 2))
+            {
+                Console.WriteLine("Vous êtes un bébé");
+            }
             else if (age >= 60)
             {
                 Console.WriteLine("Vous êtes un jeune senior.");
