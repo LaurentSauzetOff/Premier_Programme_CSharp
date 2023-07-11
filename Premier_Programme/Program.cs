@@ -19,14 +19,17 @@
             {
                 Console.WriteLine("Vous serez bientôt majeurr.");
             }
-            else if (age > 18)
+            else if ((age >= 12) && (age < 18))
+            {
+                Console.WriteLine("Vous êtes adolescent");
+            }
+            else if (age >= 60)
+            {
+                Console.WriteLine("Vous êtes un jeune senior.");
+            }
+            else if (age >= 18)
             {
                 Console.WriteLine("Vous êtes majeur.");
-
-                if (age >= 60)
-                {
-                    Console.WriteLine("Vous êtes un jeune senior.");
-                }
             }
             else
             {
