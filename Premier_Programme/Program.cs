@@ -7,7 +7,9 @@
         {
             Console.WriteLine();
             Console.WriteLine("Bonjour, vous vous appelez " + nom + ", vous avez " + age + " ans.");
-            Console.WriteLine("Bientôt vous aurez " + (age + 1) + " ans.");
+            Console.WriteLine($"Vous vous appelez {nom}, vous avez {age} ans.");
+
+            Console.WriteLine("Bentôt vous aurez " + (age+1) + " ans");
 
             if (age == 18)
             {
